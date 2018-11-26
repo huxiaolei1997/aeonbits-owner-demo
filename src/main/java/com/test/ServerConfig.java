@@ -2,6 +2,8 @@ package com.test;
 
 import org.aeonbits.owner.Config;
 
+import java.util.List;
+
 /**
  * 用途描述
  *
@@ -19,4 +21,12 @@ public interface ServerConfig extends Config {
 
     @DefaultValue("42")
     int maxThreads();
+
+    @Separator(",")
+    @Key("integerlist")
+    List<Integer> integerList();
+
+    @TokenizerClass(CustomDashTokenizer.class)
+    @DefaultValue("foo-bar-baz")
+    String[] withSeparatorClass();
 }

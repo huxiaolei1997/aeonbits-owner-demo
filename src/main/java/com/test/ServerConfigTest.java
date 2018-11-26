@@ -15,6 +15,7 @@ public class ServerConfigTest {
     public static void main(String[] args) {
         ServerConfig serverConfig = ConfigFactory.create(ServerConfig.class);
 //        ServerConfig serverConfig = ConfigCache.getOrCreate(ServerConfig.class);
-        System.out.println(serverConfig.port() + ", " + serverConfig.hostname() + ", " + serverConfig.maxThreads());
+        System.out.println(serverConfig.port() + ", " + serverConfig.hostname() + ", "
+                + serverConfig.maxThreads() + ", " + serverConfig.integerList() + ", " + serverConfig.withSeparatorClass()[0]);
     }
 }
